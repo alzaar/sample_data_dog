@@ -17,8 +17,18 @@ datadogRum.init({
     sampleRate: 100,
     premiumSampleRate: 100,
     trackInteractions: true,
-    defaultPrivacyLevel:'mask-user-input'
+    defaultPrivacyLevel:'mask-user-input',
+    // 'usr.id': 123,
+    // 'usr.name': 'randomName',
+    // 'usr.email': 'abc@gmail.com'
 });
+
+datadogRum.setUser({
+  id: '1234',
+  name: 'John Doe',
+  email: 'john@doe.com',
+  plan: 'premium',
+})
     
 datadogRum.startSessionReplayRecording();
 
