@@ -12,7 +12,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => {
@@ -28,6 +28,17 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => {
+           datadogRum.addAction('action 1', {
+              action: 'some click 1'
+           });
+        }}>Action 1</button>
+                <button onClick={() => {
+           datadogRum.addAction('action 2', {
+              action: 'some click 2'
+           });
+        }}>Action 2</button>
+
       </header>
     </div>
   );
