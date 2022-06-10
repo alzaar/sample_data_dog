@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { datadogRum } from '@datadog/browser-rum';
 
 function App() {
   return (
@@ -14,6 +15,16 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            datadogRum.addAction('checkout', {
+              cart: {
+                  amount: 42,
+                  currency: '$',
+                  nb_items: 2,
+                  items: ['socks', 't-shirt'],
+              },
+           });
+          }}
         >
           Learn React
         </a>
