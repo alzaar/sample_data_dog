@@ -32,6 +32,7 @@ datadogRum.setUser({
   password: faker.internet.password(),
   updated_at: faker.date.birthdate(),
   registeredAt: faker.date.past(),
+  companyName: 'TEST COMPANY ' + faker.commerce.product()
 })
     
 datadogRum.startSessionReplayRecording();
