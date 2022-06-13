@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { faker } from '@faker-js/faker';
 
 import { datadogRum } from '@datadog/browser-rum';
 
@@ -24,10 +25,13 @@ datadogRum.init({
 });
 
 datadogRum.setUser({
-  id: '1234',
-  name: 'John Doe',
-  email: 'john@doe.com',
-  plan: 'premium',
+  userId: faker.datatype.uuid(),
+  username: faker.internet.userName(),
+  email: faker.internet.email(),
+  user_type: faker.internet.emoji(),
+  password: faker.internet.password(),
+  updated_at: faker.date.birthdate(),
+  registeredAt: faker.date.past(),
 })
     
 datadogRum.startSessionReplayRecording();
